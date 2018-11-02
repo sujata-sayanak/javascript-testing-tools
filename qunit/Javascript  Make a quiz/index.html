@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz</title>
+<link href="style.css" rel="stylesheet">
+<script src="main.js"></script>
+
+</head>
+<body>
+
+<h1>Simple Javascript Quiz</h1>
+<form id="quiz" name="quiz">
+	
+	<p>What is the Capital city of Drc (Democratic Republic of Congo) </p>
+	
+    <input type="radio" id="mc" name="question1" value="brazzaville">Brazzaville<br>
+    <input type="radio" id="mc" name="question1" value="kinshasa">Kinshasa<br>
+    <input type="radio" id="mc" name="question1" value="durban">Durban<br>
+
+	<p>What is the Capital city of SA (South Africa) </p>
+
+    <input type="radio" id="mc" name="question2" value="Rabat">Rabat<br>
+    <input type="radio" id="mc" name="question2" value="Johannesburg">Johannesburg<br>
+    <input type="radio" id="mc" name="question2" value="pretoria">Pretoria<br>
+
+
+
+    <p>What is the Capital city of RCA (Republic Center Africa)</p>
+
+    <input type="radio" id="mc" name="question3" value="bangui">Bangui<br>
+    <input type="radio" id="mc" name="question3" value="bandundu">Bandundu<br>
+    <input type="radio" id="mc" name="question3" value="luanda">Luanda<br>
+</br>
+    <input id="button" type="button" value="I'm finished!" onclick="check();">
+
+</form>
+
+<div id="after_submit">
+	<p id="message"></p>
+<p id="number_correct"></p>
+</div>
+
+<button onclick="myFunction()">Restart</button>
+
+
+</body>
+</html>

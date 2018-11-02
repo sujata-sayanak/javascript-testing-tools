@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
+	</head>
+	<body>
+		<!-- This div element corresponds to the  CalculatorController we created via the JavaScript-->
+		<div ng-controller="CalculatorController">
+		    <p>Simple Calculator</p>
+		     addition </br>
+			<input ng-model="x" type="number">
+			<input ng-model="y" type="number">
+			<strong>{{z}}</strong>
+			<!-- the value for ngClick maps to the sum function within the controller body -->
+			<input type="button" ng-click="sum()" value="+">
+		</div>
+		
+		<div ng-controller="CalculatorController">
+			substraction </br>
+			<input ng-model="x" type="number">
+			<input ng-model="y" type="number">
+			<strong>{{z}}</strong>
+			<!-- the value for ngClick maps to the sum function within the controller body -->
+			<input type="button" ng-click="minus()" value="-">
+		</div>
+		
+		<div ng-controller="CalculatorController">
+			multiplication </br>
+			<input ng-model="x" type="number">
+			<input ng-model="y" type="number">
+			<strong>{{z}}</strong>
+			<!-- the value for ngClick maps to the sum function within the controller body -->
+			<input type="button" ng-click="multi()" value="*">
+		</div>
+		
+		<div ng-controller="CalculatorController">
+			division </br>
+			<input ng-model="x" type="number">
+			<input ng-model="y" type="number">
+			<strong>{{z}}</strong>
+			<!-- the value for ngClick maps to the sum function within the controller body -->
+			<input type="button" ng-click="div()" value="/">
+		</div>
+		
+		
+		<div ng-controller="CalculatorController">
+			factorial </br>
+			<input ng-model="x" type="number">
+			<strong>{{z}}</strong>
+			<!-- the value for ngClick maps to the sum function within the controller body -->
+			<input type="button" ng-click="fact()" value="!">
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		// Creates a new module called 'calculatorApp'
+		angular.module('calculatorApp', []);
+
+		// Registers a controller to our module 'calculatorApp'.
+		angular.module('calculatorApp').controller('CalculatorController', function CalculatorController($scope) {
+		  $scope.z = 0;
+		  $scope.sum = function() {
+		    $scope.z = $scope.x + $scope.y;
+		  };
+		  
+		  $scope.minus = function() {
+		    $scope.z = $scope.x - $scope.y;
+		  };
+		  
+		   $scope.multi = function() {
+		    $scope.z = $scope.x * $scope.y;
+		  };
+		  
+		   $scope.div = function() {
+		    $scope.z = $scope.x / $scope.y;
+		  };
+		  
+		  $scope.fact = function() {
+		    $scope.z =1
+            $scope.index =1
+      		if ($scope.x < 0) {
+        	throw new Error("There is no factorial for negative numbers");
+    		} else if ($scope.x == 1 || $scope.x == 0) {
+        		return $scope.z;
+    		} else {
+    			for ($scope.index=1; $scope.index<=$scope.x; $scope.index++){
+    			$scope.z= $scope.z * $scope.index;
+    		}
+        	 	return $scope.z;
+    		}
+		  };
+		  
+		  
+		  
+		});
+		
+		// load the app
+		angular.element(document).ready(function() {
+   			angular.bootstrap(document, ['calculatorApp']);
+		});
+
+	</script>
+</html>
